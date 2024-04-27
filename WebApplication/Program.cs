@@ -1,5 +1,5 @@
 using Npgsql;
-sing WebApplication;
+using WebApplication;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
@@ -84,7 +84,7 @@ static void Prepare(IConfiguration configuration)
         using var insertCommand = new NpgsqlCommand($"INSERT INTO data (title, area) VALUES ('Data #{i}', {i * 10});", connection, transation);
         insertCommand.CommandText = "INSERT INTO data (title, area) VALUES (@Name, @Area);";
         insertCommand.Parameters.AddWithValue("@Name", $"Data #{i}");
-        insertCommand.Parameters.AddWithValue("@Area", i * 20);
+        insertCommand.Parameters.AddWithValue("@Area", i * 10);
         insertCommand.ExecuteNonQuery();
     }
     transation.Commit();
