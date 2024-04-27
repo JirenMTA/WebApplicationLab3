@@ -1,5 +1,5 @@
 using Npgsql;
-using WebApplication;
+sing WebApplication;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
